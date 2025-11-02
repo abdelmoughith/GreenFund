@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../theme/styles.dart';
+import '../theme/colors.dart';
 
 class ProjectCard extends StatelessWidget {
   final String title;
@@ -9,15 +11,16 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(12),
-      elevation: 3,
+      shape: AppStyles.projectCardTheme.shape,
+      elevation: AppStyles.projectCardTheme.elevation,
+      margin: AppStyles.projectCardTheme.margin,
       child: ListTile(
-        leading: const Icon(Icons.energy_savings_leaf, color: Colors.green),
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text('Type d’énergie : $energy'),
+        leading: const Icon(Icons.energy_savings_leaf, color: AppColors.primaryGreen),
+        title: Text(title, style: AppStyles.titleText),
+        subtitle: Text('Type d’énergie : $energy', style: AppStyles.subtitleText),
         trailing: TextButton(
           onPressed: () {},
-          child: const Text('Voir'),
+          child: const Text('Voir', style: TextStyle(color: AppColors.primaryGreen)),
         ),
       ),
     );

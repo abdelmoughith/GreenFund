@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import 'login_screen.dart';
+import '../theme/colors.dart';
+import '../theme/styles.dart';
 
 class AccountFragment extends StatelessWidget {
   const AccountFragment({super.key});
@@ -16,11 +18,18 @@ class AccountFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Mon Compte')),
+      appBar: AppBar(
+        title: const Text('Mon Compte'),
+        backgroundColor: AppColors.primaryGreen,
+      ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () => _logout(context),
-          child: const Text('Se déconnecter'),
+        child: SizedBox(
+          width: 200,
+          child: ElevatedButton(
+            onPressed: () => _logout(context),
+            style: AppStyles.greenButton,
+            child: const Text('Se déconnecter'),
+          ),
         ),
       ),
     );

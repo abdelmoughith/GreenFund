@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'projects_fragment.dart';
 import 'account_fragment.dart';
+import '../theme/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
-        selectedItemColor: Colors.green,
+        selectedItemColor: AppColors.primaryGreen,
+        unselectedItemColor: Colors.grey,
         onTap: (i) => setState(() => _index = i),
         items: const [
           BottomNavigationBarItem(
